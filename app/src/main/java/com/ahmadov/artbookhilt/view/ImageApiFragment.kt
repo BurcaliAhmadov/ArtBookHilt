@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.ahmadov.artbookhilt.R
+import com.ahmadov.artbookhilt.adapter.ImageRecyclerAdapter
 import com.ahmadov.artbookhilt.databinding.FragmentImageApiBinding
+import javax.inject.Inject
 
-class ImageApiFragment: Fragment(R.layout.fragment_image_api) {
+class ImageApiFragment @Inject constructor(
+    val imageRecyclerAdapter: ImageRecyclerAdapter
+): Fragment(R.layout.fragment_image_api) {
 
     private var fragmentBinding:FragmentImageApiBinding?=null
 

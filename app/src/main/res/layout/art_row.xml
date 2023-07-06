@@ -7,6 +7,7 @@
     android:padding="16dp">
 
     <ImageView
+        android:id="@+id/artRowImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
@@ -24,6 +25,7 @@
 
 
         <TextView
+            android:id="@+id/artRowArtNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Art Name"
@@ -35,6 +37,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/artRowArtistNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Art Name"
@@ -46,6 +49,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/artRowYearText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Art Name"

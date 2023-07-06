@@ -2,9 +2,15 @@ package com.ahmadov.artbookhilt.dependencyinjection
 
 import android.content.Context
 import androidx.room.Room
+import com.ahmadov.artbookhilt.R
 import com.ahmadov.artbookhilt.api.RetrofitApi
+import com.ahmadov.artbookhilt.repo.ArtRepository
+import com.ahmadov.artbookhilt.repo.ArtRepositoryInterface
+import com.ahmadov.artbookhilt.roomdb.ArtDao
 import com.ahmadov.artbookhilt.roomdb.ArtDatabase
 import com.ahmadov.artbookhilt.util.Util.BASE_URL
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,6 +42,19 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL).build().create(RetrofitApi::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun injectNormalRepo(dao: ArtDao,api : RetrofitApi)=ArtRepository(dao,api) as ArtRepositoryInterface
+
+
+    @Singleton
+    @Provides
+    fun injectGlide(@ApplicationContext context:Context)= Glide.with(context)
+            .setDefaultRequestOptions(
+                RequestOptions().placeholder(R.drawable.ic_launcher_foreground)
+                    .error(R.drawable.ic_launcher_foreground))
+
 
 
 }

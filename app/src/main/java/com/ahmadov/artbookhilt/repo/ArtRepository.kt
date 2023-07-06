@@ -9,8 +9,9 @@ import com.ahmadov.artbookhilt.util.Resource
 import javax.inject.Inject
 
 class ArtRepository @Inject constructor(
-    val retrofitApi :RetrofitApi,
-    val artDao:ArtDao
+    val artDao:ArtDao,
+    val retrofitApi :RetrofitApi
+
 ):ArtRepositoryInterface {
     override suspend fun insertArt(art: Art) {
         artDao.insertDao(art)
