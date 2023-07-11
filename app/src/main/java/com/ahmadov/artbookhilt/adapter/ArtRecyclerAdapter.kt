@@ -51,7 +51,7 @@ class ArtRecyclerAdapter @Inject constructor(
         val imageView=holder.itemView.findViewById<ImageView>(R.id.artRowImageView)
         val nameText=holder.itemView.findViewById<TextView>(R.id.artRowArtNameText)
         val artistNameText=holder.itemView.findViewById<TextView>(R.id.artRowArtistNameText)
-        val yearText=holder.itemView.findViewById<TextView>(R.id.yearText)
+        val yearText=holder.itemView.findViewById<TextView>(R.id.artRowYearText)
         val art=arts[position]
         holder.itemView.apply {
             nameText.text="Name: ${art.name}"
